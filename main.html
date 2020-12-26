@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KonversiUang</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <td>
+                Masukkan Nilai
+            </td>
+            <td>
+                Valas
+            </td>
+            <td>
+                Nilai Rupiah
+            </td>
+
+        </thead>
+        <tbody>
+            <td>
+                <input type="text" id="inputs">
+            </td>
+            <td>
+                <select id="convert" onchange="func()">
+                    <option value="us">Dollas US</option>
+                    <option value="sg">Dollas Singapore</option>
+                    <option value="mly">Ringgit Malaysia</option>
+                    <option value="jpn">Yen Jepang</option>
+                    <option value="eur">Euro</option>
+                    <option value="ae">Riyal Arab Saudi</option>
+                </select>
+            </td>
+            <th width="50%">
+                <p id="hasil"></p>
+            </th>
+        </tbody>
+    </table>
+    <script>
+        function func() { 
+            var inputs = document.getElementById("inputs").value;
+            var choose = document.getElementById("convert").value;
+            var konversi;
+
+            switch (choose) {
+                case "us":
+                    konversi = parseInt(inputs) * 9915;
+                    break;
+                case "sg":
+                    konversi = parseInt(inputs) * 13472;
+                    break;
+                case "mly":
+                    konversi = parseInt(inputs) * 874;
+                    break;
+                case "jpn":
+                    konversi = parseInt(inputs) * 120;
+                    break;
+                case "eur":
+                    konversi = parseInt(inputs) * 15888;
+                    break;
+                case "ae":
+                    konversi = parseInt(inputs) * 3592;
+                    break;
+            }
+            document.getElementById("hasil").innerHTML = "Rp. " + konversi;
+         }
+
+    </script>
+</body>
+</html>
